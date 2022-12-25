@@ -1,6 +1,8 @@
 """
 Run a rest API exposing the yolov5s object detection model
 """
+import sys
+print(sys.executable)
 import argparse
 import io
 from PIL import Image

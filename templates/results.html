@@ -35,6 +35,9 @@
           font-size: 3.5rem;
         }
       }
+      p{
+        color: rgb(202, 225, 223);
+      }
     </style>
     <link rel="stylesheet" href="/static/css/style.css">
 
@@ -93,7 +96,57 @@
             <span><i class="ti-angle-down"></i></span>
           </a>
           <!-- Dropdown list -->
-          
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item active" href="index.html">Homepage</a></li>
+            <li><a class="dropdown-item" href="homepage-2.html">Homepage 2</a></li>
+            <li><a class="dropdown-item active3" href="homepage-3.html">Homepage 3</a></li>
+
+            <li class="dropdown dropdown-submenu dropright">
+              <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0301" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdown0301">
+                <li><a class="dropdown-item" href="index.html">Submenu 11</a></li>
+                <li><a class="dropdown-item" href="index.html">Submenu 12</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown @@pages">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Pages
+            <span><i class="ti-angle-down"></i></span>
+          </a>
+          <!-- Dropdown list -->
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item @@team" href="team.html">Team</a></li>
+            <li><a class="dropdown-item @@career" href="career.html">Career</a></li>
+            <li><a class="dropdown-item @@blog" href="blog.html">Blog</a></li>
+            <li><a class="dropdown-item @@blogSingle" href="blog-single.html">Blog Single</a></li>
+            <li><a class="dropdown-item @@privacy" href="privacy-policy.html">Privacy</a></li>
+            <li><a class="dropdown-item @@faq" href="FAQ.html">FAQ</a></li>
+            <li><a class="dropdown-item" href="sign-in.html">Sign In</a></li>
+            <li><a class="dropdown-item" href="sign-up.html">Sign Up</a></li>
+            <li><a class="dropdown-item" href="404.html">404</a></li>
+            <li><a class="dropdown-item" href="comming-soon.html">Coming Soon</a></li>
+
+            <li class="dropdown dropdown-submenu dropleft">
+              <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdown0501">
+                <li><a class="dropdown-item" href="index.html">Submenu 21</a></li>
+                <li><a class="dropdown-item" href="index.html">Submenu 22</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item @@about">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item @@contact">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
@@ -123,35 +176,18 @@
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-md-6 order-2 order-md-1 text-center text-md-left">
-				<h1 class="text-white font-weight-bold mb-4">Upload image to get personal information about driver</h1>
-				<p class="text-white mb-5">Recognize license plate numbers and transform the optical data into digital information. Getting personal public or contact information about the driver</p>
-          <form class="form-signin" method=post enctype=multipart/form-data>
-       
-            <input type="file" name="file" class="form-control-file" id="inputfile">
-            <br/>
-            <a href="FAQ.html" class="btn btn-main-md"><button class="btn btn-lg btn-primary btn-block" type="submit">Show Results</button></a>
-           
-        </form>
+                <h2>Car is allowed to enter.</h2>
+				<h1 class="text-white font-weight-bold mb-4">Information about car owner:</h1>
+                <p>Name: {{ name }} </p>
+                <p>Surname: {{ surname }} </p>
+                <p>License number: {{ plate_num }} </p>
+                <p>Job title: {{ customer_job }} </p>
 				
+                
+    </div>
+    <div class="col-md-6 order-2 order-md-1 text-center text-md-right"><img src="{{ image_path }}" width="300px" alt=""></div>
+</div></div> 
 			
-    <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-      $('#inputfile').bind('change', function() {
-          //let fileSize = this.files[0].size/1024/1024; // this gives in MB
-         // if (fileSize > 1) {
-          //  $("#inputfile").val(null);
-         //   alert('file is too big. images more than 1MB are not allowed')
-         //   return
-         // }
-
-         // let ext = $('#inputfile').val().split('.').pop().toLowerCase();
-         // if($.inArray(ext, ['jpg','jpeg']) == -1) {
-         //   $("#inputfile").val(null);
-         //   alert('only jpeg/jpg files are allowed!');
-         // }
-      });
-    </script>
+    
   </body>
 </html>
